@@ -5,7 +5,7 @@ import {
   Youtube,
   MapPin,
   Phone,
-  Mail,
+  // Mail, // Temporarily disabled - email functionality commented out
   Clock,
   ArrowRight,
 } from "lucide-react";
@@ -21,7 +21,7 @@ const quickLinks = [
   { name: "Our Services", href: "/services" },
   { name: "Gallery", href: "/gallery" },
   { name: "Packages & Pricing", href: "/packages" },
-  { name: "Blog", href: "/blog" },
+  // { name: "Blog", href: "/blog" }, // TEMPORARILY DISABLED - Coming Soon
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -141,6 +141,7 @@ export function Footer() {
                   <span className="text-sm">{siteConfig.phone}</span>
                 </a>
               </li>
+              {/* Email - TEMPORARILY DISABLED
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
@@ -150,6 +151,7 @@ export function Footer() {
                   <span className="text-sm">{siteConfig.email}</span>
                 </a>
               </li>
+              */}
               <li className="flex gap-3">
                 <Clock className="w-5 h-5 text-primary shrink-0" />
                 <div className="text-sm">
@@ -161,7 +163,8 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Newsletter */}
+        {/* Newsletter - TEMPORARILY DISABLED */}
+        {false && (
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
@@ -182,6 +185,7 @@ export function Footer() {
             </div>
           </div>
         </div>
+        )} {/* END TEMPORARILY DISABLED - Newsletter */}
       </div>
 
       <Separator className="bg-gray-800" />

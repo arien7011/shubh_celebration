@@ -22,7 +22,7 @@ export default function HomePage() {
       <WhyChooseUsSection />
       <GallerySection />
       <ProcessSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */} {/* TEMPORARILY DISABLED */}
       <ServiceAreasSection />
       <CTASection />
     </>

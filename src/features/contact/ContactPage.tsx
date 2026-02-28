@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { 
   MapPin, 
   Phone, 
-  Mail, 
+  // Mail, // Temporarily disabled - email functionality commented out
   Clock, 
   MessageCircle,
   Instagram,
@@ -36,28 +36,30 @@ const contactInfo = [
     icon: Phone,
     title: "Phone Numbers",
     details: [
-      "+91 98765 43210 (Primary)",
-      "+91 98765 43211 (WhatsApp)",
-      "+91 11 4567 8900 (Landline)"
+      "+91 87006 43999 (Primary)",
+      "+91 87006 43999 (WhatsApp)",
+      "+91 70111 31330 (Alternate)"
     ],
     action: {
       label: "Call Now",
-      href: "tel:+919876543210"
+      href: "tel:+918700643999"
     }
   },
+  /* Email Us - TEMPORARILY DISABLED (to be integrated with backend)
   {
     icon: Mail,
     title: "Email Us",
     details: [
-      "info@shubhcelebration.com",
-      "bookings@shubhcelebration.com",
-      "careers@shubhcelebration.com"
+      "shubhcelebrations108@gmail.com",
+      "shubhcelebrations108@gmail.com",
+      "shubhcelebrations108@gmail.com"
     ],
     action: {
       label: "Send Email",
-      href: "mailto:info@shubhcelebration.com"
+      href: "mailto:shubhcelebrations108@gmail.com"
     }
   },
+  */
   {
     icon: Clock,
     title: "Working Hours",
@@ -203,7 +205,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Form & Map Section */}
+      {/* Contact Form & Map Section - TEMPORARILY DISABLED (includes Fill Out The Form, Find Us Here, Connect With Us) */}
+      {false && (
       <section className="py-16 lg:py-20 bg-muted/30" id="contact-form">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -306,6 +309,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      )} {/* END TEMPORARILY DISABLED - Contact Form & Map Section */}
 
       {/* FAQ Section */}
       <section className="py-16 lg:py-20">
@@ -376,7 +380,7 @@ export default function ContactPage() {
                   ))}
                 </div>
                 <p className="text-center text-muted-foreground mt-6">
-                  Don't see your location? <a href="tel:+919876543210" className="text-primary hover:underline">Contact us</a> - we may still be able to serve you!
+                  Don't see your location? <a href="tel:+918700643999" className="text-primary hover:underline">Contact us</a> - we may still be able to serve you!
                 </p>
               </CardContent>
             </Card>
@@ -406,10 +410,10 @@ export default function ContactPage() {
                 to help you create unforgettable moments.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <a href="tel:+919876543210">
+                <a href="tel:+918700643999">
                   <Button size="lg" variant="secondary" className="font-semibold">
                     <Phone className="w-5 h-5 mr-2" />
-                    Call: +91 98765 43210
+                    Call: +91 87006 43999
                   </Button>
                 </a>
                 <a 

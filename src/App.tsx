@@ -12,8 +12,8 @@ const GalleryPage = lazy(() => import("@/features/gallery/GalleryPage"));
 const AboutPage = lazy(() => import("@/features/about/AboutPage"));
 const ContactPage = lazy(() => import("@/features/contact/ContactPage"));
 const PackagesPage = lazy(() => import("@/features/packages/PackagesPage"));
-const BlogPage = lazy(() => import("@/features/blog/BlogPage"));
-const BlogDetailPage = lazy(() => import("@/features/blog/BlogDetailPage"));
+// const BlogPage = lazy(() => import("@/features/blog/BlogPage")); // TEMPORARILY DISABLED - Coming Soon
+// const BlogDetailPage = lazy(() => import("@/features/blog/BlogDetailPage")); // TEMPORARILY DISABLED - Coming Soon
 
 // Loading fallback component
 const PageLoader = () => (
@@ -56,8 +56,9 @@ function App() {
               <Route path="about" element={<AboutPage />} />
               <Route path="contact" element={<ContactPage />} />
               <Route path="packages" element={<PackagesPage />} />
-              <Route path="blog" element={<BlogPage />} />
-              <Route path="blog/:slug" element={<BlogDetailPage />} />
+              {/* Blog routes TEMPORARILY DISABLED - Coming Soon */}
+              {/* <Route path="blog" element={<BlogPage />} /> */}
+              {/* <Route path="blog/:slug" element={<BlogDetailPage />} /> */}
               <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Routes>

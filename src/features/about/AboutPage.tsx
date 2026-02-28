@@ -276,7 +276,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Timeline - TEMPORARILY DISABLED (Milestones & Achievements) */}
+      {false && (
       <section className="section-padding">
         <div className="container-custom">
           <SectionHeading
@@ -328,8 +329,10 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      )} {/* END TEMPORARILY DISABLED - Milestones & Achievements */}
 
-      {/* Team */}
+      {/* Team - TEMPORARILY DISABLED */}
+      {false && (
       <section className="section-padding bg-muted/30">
         <div className="container-custom">
           <SectionHeading
@@ -363,6 +366,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      )} {/* END TEMPORARILY DISABLED - Our Team */}
 
       <CTASection />
     </>

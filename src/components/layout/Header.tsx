@@ -23,8 +23,8 @@ const navigation = [
     ],
   },
   { name: "Gallery", href: "/gallery" },
-  { name: "Packages", href: "/packages" },
-  { name: "Blog", href: "/blog" },
+  // { name: "Packages", href: "/packages" }, /* Coming soon - to be enabled in future */
+  { name: "Blog", href: "/blog", comingSoon: true },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
@@ -83,22 +83,33 @@ export function Header() {
               <div
                 key={item.name}
                 className="relative"
-                onMouseEnter={() => item.children && setActiveDropdown(item.name)}
+                onMouseEnter={() => (item.children || item.comingSoon) && setActiveDropdown(item.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <Link
-                  to={item.href}
-                  className={cn(
-                    "flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
-                    isScrolled
-                      ? "text-foreground hover:text-primary hover:bg-primary/10"
-                      : "text-white/90 hover:text-white hover:bg-white/10",
-                    location.pathname === item.href && "text-primary"
-                  )}
-                >
-                  {item.name}
-                  {item.children && <ChevronDown className="w-4 h-4" />}
-                </Link>
+                {item.comingSoon ? (
+                  <span
+                    className={cn(
+                      "flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium cursor-default select-none",
+                      isScrolled ? "text-muted-foreground" : "text-white/40"
+                    )}
+                  >
+                    {item.name}
+                  </span>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className={cn(
+                      "flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
+                      isScrolled
+                        ? "text-foreground hover:text-primary hover:bg-primary/10"
+                        : "text-white/90 hover:text-white hover:bg-white/10",
+                      location.pathname === item.href && "text-primary"
+                    )}
+                  >
+                    {item.name}
+                    {item.children && <ChevronDown className="w-4 h-4" />}
+                  </Link>
+                )}
 
                 {/* Dropdown Menu */}
                 {item.children && (
@@ -120,6 +131,22 @@ export function Header() {
                             {child.name}
                           </Link>
                         ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+                {/* Coming Soon Tooltip */}
+                {item.comingSoon && (
+                  <AnimatePresence>
+                    {activeDropdown === item.name && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white rounded-xl shadow-xl border px-4 py-2 text-sm font-medium text-primary whitespace-nowrap z-10"
+                      >
+                        🚀 Coming Soon
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -176,16 +203,23 @@ export function Header() {
               <div className="flex flex-col gap-2">
                 {navigation.map((item) => (
                   <div key={item.name}>
-                    <Link
-                      to={item.href}
-                      className={cn(
-                        "block px-4 py-2 rounded-lg text-foreground hover:bg-primary/10 hover:text-primary transition-colors",
-                        location.pathname === item.href &&
-                          "bg-primary/10 text-primary"
-                      )}
-                    >
-                      {item.name}
-                    </Link>
+                    {item.comingSoon ? (
+                      <div className="flex items-center justify-between px-4 py-2 rounded-lg text-muted-foreground">
+                        <span>{item.name}</span>
+                        <span className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">Coming Soon</span>
+                      </div>
+                    ) : (
+                      <Link
+                        to={item.href}
+                        className={cn(
+                          "block px-4 py-2 rounded-lg text-foreground hover:bg-primary/10 hover:text-primary transition-colors",
+                          location.pathname === item.href &&
+                            "bg-primary/10 text-primary"
+                        )}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
                     {item.children && (
                       <div className="ml-4 mt-1 flex flex-col gap-1">
                         {item.children.map((child) => (

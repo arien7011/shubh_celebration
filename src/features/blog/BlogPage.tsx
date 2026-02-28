@@ -317,7 +317,8 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
+      {/* Newsletter CTA - TEMPORARILY DISABLED */}
+      {false && (
       <section className="py-16 lg:py-20">
         <div className="container">
           <motion.div
@@ -353,6 +354,7 @@ export default function BlogPage() {
           </motion.div>
         </div>
       </section>
+      )} {/* END TEMPORARILY DISABLED - Newsletter CTA */}
     </>
   );
 }

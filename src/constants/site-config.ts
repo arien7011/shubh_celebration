@@ -4,9 +4,9 @@ export const siteConfig = {
   description:
     "Premium balloon decoration & complete event management across Delhi NCR. Weddings, birthdays, corporate events, and more. 500+ events delivered with 4.9★ rating.",
   url: "https://shubhcelebration.com",
-  phone: "+91 98765 43210",
-  whatsapp: "+919876543210",
-  email: "info@shubhcelebration.com",
+  phone: "+91 87006 43999",
+  whatsapp: "918700643999",
+  email: "shubhcelebrations108@gmail.com",
   address: "123, Celebration Street, Connaught Place, New Delhi - 110001",
   socialLinks: {
     instagram: "https://instagram.com/shubhcelebration",
@@ -37,7 +37,7 @@ export const siteConfig = {
 };
 
 export const whatsappMessage = encodeURIComponent(
-  "Hi! I'm interested in event decoration services. Can you please share more details?"
+  "Hi! I'm interested in event decoration services. Can you please share more details?",
 );
 
 export const getWhatsAppLink = (message?: string) => {
@@ -47,4 +47,4 @@ export const getWhatsAppLink = (message?: string) => {
 
 export const getPhoneLink = () => `tel:${siteConfig.phone}`;
 
-export const getEmailLink = () => `mailto:${siteConfig.email}`;
+// export const getEmailLink = () => `mailto:${siteConfig.email}`; // Temporarily disabled - to be integrated with backend

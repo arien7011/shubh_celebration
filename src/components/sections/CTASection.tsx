@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, ArrowRight } from "lucide-react";
+import { Phone, MessageCircle /*, ArrowRight */ } from "lucide-react"; // ArrowRight temporarily disabled with contact form link
 import { Button } from "@/components/ui/button";
 import { siteConfig, getWhatsAppLink, getPhoneLink } from "@/constants/site-config";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom"; // Temporarily disabled with contact form link
 
 export function CTASection() {
   return (
@@ -65,10 +65,12 @@ export function CTASection() {
             </a>
           </div>
 
+          {/* Or fill out our contact form - TEMPORARILY DISABLED
           <Link to="/contact" className="inline-flex items-center gap-2 text-white hover:underline">
             Or fill out our contact form
             <ArrowRight className="w-4 h-4" />
           </Link>
+          */}
         </motion.div>
       </div>
     </section>
